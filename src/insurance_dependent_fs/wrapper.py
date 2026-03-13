@@ -229,7 +229,8 @@ class DependentFSModel(BaseEstimator):
             Expected claims per unit exposure for each policy.
         """
         exposure = np.asarray(exposure, dtype=np.float32)
-        log_lambda, _, _ = self._forward_numpy(X, exposure)
+        n_zero = np.zeros(len(X), dtype=np.float32)
+        log_lambda, _, _ = self._forward_numpy(X, exposure, n_claims_for_gamma=n_zero)
         lambda_with_exp = torch.exp(log_lambda).numpy()
         return lambda_with_exp / exposure
 

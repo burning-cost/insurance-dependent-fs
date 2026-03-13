@@ -103,7 +103,7 @@ class PurePremiumEstimator:
         pp: Tensor of shape (n,)
             Pure premium (expected total loss per unit exposure) for each policy.
         """
-        gen = torch.Generator(device="cpu").manual_seed(self.seed)
+        torch.manual_seed(self.seed)
         n_policies = log_lambda.shape[0]
         lambda_ = torch.exp(log_lambda).cpu()  # shape (n,)
         mu = torch.exp(log_mu).cpu()            # shape (n,)
