@@ -47,7 +47,7 @@ class TestLorenzCurve:
         diag, *_ = diag_fixture
         cum_exp, cum_loss, gini = diag.lorenz_curve(target="frequency")
         assert cum_exp.shape == cum_loss.shape
-        assert 0.0 <= gini <= 1.0
+        assert -1.0 <= gini <= 1.0  # can be negative for anti-predictive models
 
     def test_pure_premium_lorenz(self, diag_fixture):
         diag, *_ = diag_fixture
