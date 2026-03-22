@@ -70,7 +70,12 @@ from insurance_dependent_fs.diagnostics import DependentFSDiagnostics
 from insurance_dependent_fs.data import FreqSevDataset, prepare_features
 from insurance_dependent_fs.benchmarks import make_dependent_claims, make_independent_claims
 
-__version__ = "0.1.0"
+from importlib.metadata import version, PackageNotFoundError
+
+try:
+    __version__ = version("insurance-dependent-fs")
+except PackageNotFoundError:
+    __version__ = "0.0.0"  # not installed
 
 __all__ = [
     "DependentFreqSevNet",
