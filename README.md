@@ -1,3 +1,5 @@
+⚠️ **This package has been merged into [`insurance-frequency-severity`](https://github.com/burning-cost/insurance-frequency-severity).** This repository is archived. Install `insurance-frequency-severity` instead.
+
 # insurance-dependent-fs
 
 A dependent frequency-severity neural two-part model for insurance pricing.
